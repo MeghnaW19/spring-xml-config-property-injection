@@ -14,7 +14,7 @@ public class Main {
         Menu firstMenu = (Menu) xmlBeanFactory.getBean("menu1");
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Menu menu = (Menu) applicationContext.getBean("menu2");
+        Menu menu = (Menu) applicationContext.getBean("menu1");
         System.out.println(firstMenu.getDish());
         System.out.println(menu.getDish());
 

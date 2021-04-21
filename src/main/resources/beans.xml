@@ -15,10 +15,6 @@
     </bean>
 
     <bean id="menu1" class="com.stackroute.domain.Menu">
-        <property name="dish" ref="dish1"/>
-    </bean>
-
-    <bean id="menu2" class="com.stackroute.domain.Menu">
 <!--        <property name="dish" ref="dish2"/>-->
         <property name="dish">
         <list value-type="java.util.List">
