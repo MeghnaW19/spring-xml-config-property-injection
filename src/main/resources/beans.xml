@@ -5,26 +5,30 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="dish1" class="com.stackroute.domain.Dish">
-        <property name="id" value="1"/>
-        <property name="name" value="Pulao"/>
+        <constructor-arg index="0" value="1"> </constructor-arg>
+        <constructor-arg index="1" value="Indian"> </constructor-arg>
     </bean>
 
     <bean id="dish2" class="com.stackroute.domain.Dish">
-        <property name="id" value="2"/>
-        <property name="name" value="Dal"/>
+        <constructor-arg index="0" value="1"> </constructor-arg>
+        <constructor-arg index="1" value="Continental"> </constructor-arg>
     </bean>
 
-    <bean id="menu1" class="com.stackroute.domain.Menu">
-        <property name="dish" ref="dish1"/>
+    <bean name="menu1, menu3" class="com.stackroute.domain.Menu" scope="singleton" >
+        <constructor-arg >
+            <list>
+                <ref bean="dish1"/>
+                <ref bean="dish2"/>
+            </list>
+        </constructor-arg>
     </bean>
 
-    <bean id="menu2" class="com.stackroute.domain.Menu">
-<!--        <property name="dish" ref="dish2"/>-->
-        <property name="dish">
-        <list value-type="java.util.List">
-            <ref bean="dish1"/>
-            <ref bean="dish2"/>
-        </list>
-        </property>
+    <bean id="menu2" class="com.stackroute.domain.Menu"  scope="prototype">
+        <constructor-arg >
+            <list>
+                <ref bean="dish1"/>
+                <ref bean="dish2"/>
+            </list>
+        </constructor-arg>
     </bean>
 </beans>
