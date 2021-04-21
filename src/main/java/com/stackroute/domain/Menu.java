@@ -1,19 +1,20 @@
 package com.stackroute.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Menu {
 
-    private Dish dish;
+    private List<Dish> dish;
 
     public Menu() {
     }
 
-    public Dish getDish() {
+    public List<Dish> getDish() {
         return dish;
     }
 
-    public void setDish(Dish dish) {
+    public void setDish(List<Dish> dish) {
         this.dish = dish;
     }
 }

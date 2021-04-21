@@ -19,6 +19,11 @@
     </bean>
 
     <bean id="menu2" class="com.stackroute.domain.Menu">
-        <property name="dish" ref="dish2"/>
+        <property name="dish">
+        <list value-type="java.util.List">
+            <ref bean="dish1"/>
+            <ref bean="dish2"/>
+        </list>
+        </property>
     </bean>
 </beans>
